@@ -4,7 +4,6 @@ INDEX VERSION 1.131+E:\Develop\multiagent_eletrical_data\.metadata\.plugins\org.
 3607350547.index
 3270669329.index
 3146363744.index
-3095995213.index
 3458854255.index
 2602215987.index
 3625388892.index

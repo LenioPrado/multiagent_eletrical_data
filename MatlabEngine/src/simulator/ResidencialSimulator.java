@@ -43,9 +43,11 @@ public class ResidencialSimulator {
 					sim.setSimulationValues();
 					MatlabHelper.runSimulinkModel(modelName);
 					MatlabHelper.feval("processResults");
+					MatlabHelper.feval("processResults");
 					MatlabHelper.getEngine().eval(String.format("plotGenerationValues('%s_%d')", sim.getSimulationDescription(), i));
 					MatlabHelper.getEngine().eval(String.format("plotApplianceValues('%s_%d')", sim.getSimulationDescription(), i));
 					MatlabHelper.getEngine().eval(String.format("plotStateOfChargeValues('%s_%d')", sim.getSimulationDescription(), i));
+					MatlabHelper.getEngine().eval(String.format("plotLoadValues('%s_%d')", sim.getSimulationDescription(), i));					
 					sim.resetSimulationValues();
 				} catch (Exception e) {
 					e.printStackTrace();
