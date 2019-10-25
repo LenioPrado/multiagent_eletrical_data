@@ -1,0 +1,4 @@
+1570719556337	Rename local variable 'amountOfPowerOnHours'
+1570719566427	Rename field '_powerOnHours'
+1570719608586	Rename method 'getPowerOnHours'
+1570720229310	Rename method 'setRangeValues'

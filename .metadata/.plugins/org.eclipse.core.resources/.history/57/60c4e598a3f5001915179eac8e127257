@@ -1,0 +1,32 @@
+package time;
+
+public class AllDayPeriodsTimeOfUse extends VariableTimeOfUse {
+
+	public AllDayPeriodsTimeOfUse(double[] clockTimesWhenIsUsed, double[] amountOfPowerOnHours) throws Exception {
+		super(3, clockTimesWhenIsUsed, amountOfPowerOnHours);
+	}
+	
+	public double getMorningHoursOfUse() {
+		return super.getFirstHoursOfUse();
+	}
+	
+	public double getMorningPowedrOnTime() {
+		return super.getFirstPowerOnTime();
+	}
+	
+	public double getNoonHoursOfUse() {
+		return super.getSecondHoursOfUse();
+	}
+	
+	public double getNoonPowerOnTime() {
+		return super.getSecondPowerOnTime();
+	}
+
+	public double getNightHoursOfUse() {
+		return super.getThirdHoursOfUse();
+	}
+
+	public double getNightPowerOnTime() {
+		return super.getThirdPowerOnTime();
+	}	
+}

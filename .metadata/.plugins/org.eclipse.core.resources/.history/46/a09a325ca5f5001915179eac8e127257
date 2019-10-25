@@ -1,0 +1,36 @@
+package simulator.cases;
+
+import enums.EquipmentState;
+import equipment.Equipment;
+import equipment.cyclicusage.CyclicUsageParameter;
+import equipment.cyclicusage.Dryer;
+import equipment.rates.Rates;
+import simulator.BaseSimulationCase;
+import time.FixedTimeOfUse;
+
+public class DryerSimulation extends BaseSimulationCase {
+
+	public DryerSimulation(Rates rates) throws Exception {
+		super(rates);
+	}
+	
+	@Override
+	public String getSimulationDescription() {
+		return "DryerSimulation";
+	}
+
+	@Override
+	public void setSimulationValues() throws Exception {
+		new Dryer(EquipmentState.ON, new CyclicUsageParameter(3, new FixedTimeOfUse(80, new double[] {10,15,20})));	
+	}	
+
+	@Override
+	public void resetSimulationValues() throws Exception {
+		new Dryer(EquipmentState.OFF, new CyclicUsageParameter(3, new FixedTimeOfUse(80, new double[] {10,15,20})));	
+	}
+	
+	@Override
+	protected Equipment getEquipment(EquipmentState state) throws Exception {
+		return 
+	}
+}

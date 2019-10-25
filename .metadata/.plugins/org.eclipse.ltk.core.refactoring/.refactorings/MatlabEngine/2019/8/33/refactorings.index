@@ -1,0 +1,96 @@
+1565620236880	Rename method 'setWaterHeaterParams'
+1565620243047	Rename method 'setDryerParams'
+1565621367392	Rename local variable 'Tamb'
+1565621530030	Rename local variable 'Tinlet'
+1565621558875	Rename local variable 'Q_WH'
+1565621584699	Rename local variable 'SetP_WH'
+1565621626879	Rename local variable 'waterHeaterWaterVol'
+1565621672999	Rename local variable 'waterHeaterWaterLiterCapacity'
+1565621687509	Rename local variable 'EF'
+1565621696779	Rename local variable 'waterHeaterEfficientyEF'
+1565622128879	Rename local variable 'Joule_Watts'
+1565622173194	Rename local variable 'Cp_WH'
+1565622212253	Rename local variable 'Cw_WH'
+1565622225189	Rename local variable 'mdot_WH'
+1565622238113	Rename local variable 'UA_WH'
+1565622318738	Rename local variable 'Cp_mdot'
+1565622344473	Rename local variable 'OnOff_WH'
+1565623719468	Rename local variable 'powerIncandescenteWatts'
+1565623806537	Rename local variable 'powerCFLIncandescentWatts'
+1565623840007	Rename local variable 'powerCompactFluorescentLightWatts'
+1565623849256	Rename local variable 'powerTubeFluorescentLightWatts'
+1565632024753	Rename local variable 'paramName'
+1565632030424	Rename local variable 'key'
+1565632524699	Rename local variable 'morningPowerOnHours'
+1565632535986	Rename local variable 'nightPowerOnHours'
+1565632543673	Rename local variable 'morningPowerOnTime'
+1565632552370	Rename local variable 'nightPowerOnTime'
+1565633275712	Move compilation units
+1565633735400	Rename local variable 'key'
+1565638347298	Move compilation unit
+1565638376797	Rename package 'equipment.photovoltaic'
+1565638381656	Move compilation unit
+1565638385912	Delete element
+1565638529298	Rename local variable 'hoursPower'
+1565638658621	Rename local variable 'hoursPower'
+1565639567781	Rename local variable 'batteryIsAvailable'
+1565639801021	Rename local variable 'batteryIsAvailable'
+1565708949803	Move compilation units
+1565708961552	Move compilation unit
+1565708966104	Move compilation unit
+1565709203932	Rename package 'equipment.dishwasher'
+1565709814499	Rename local variable 'typeDw'
+1565709821552	Rename local variable 'dishIsOn'
+1565710110160	Move compilation unit
+1565710116548	Delete element
+1565710122689	Move compilation units
+1565710424512	Rename local variable 'dishIsOn'
+1565711263594	Delete element
+1565717749496	Rename local variable 'hour'
+1565717771531	Rename local variable 'paramName'
+1565718864441	Rename local variable 'term1Gains'
+1565718874396	Rename local variable 'term2Gains'
+1565721318940	Rename local variable 'isOn'
+1565721335250	Rename local variable 'isOn'
+1565721625622	Rename field 'stateCode'
+1565721753436	Rename field 'stateCode'
+1565721760356	Rename local variable 'stateCode'
+1565721795626	Rename local variable 'isConnectedToHotWater'
+1565722917635	Rename local variable 'isOn'
+1565723696838	Move compilation units
+1565728358471	Rename local variable 'width'
+1565728362556	Rename local variable 'height'
+1565728375460	Rename local variable 'length'
+1565728381620	Rename local variable 'Ancho'
+1565728389365	Rename local variable 'Largo'
+1565728394510	Rename local variable 'Altura'
+1565728420290	Rename local variable 'Area_Total'
+1565728433120	Rename local variable 'Volumen_Total'
+1565728482819	Rename local variable 'Term1'
+1565728491579	Rename local variable 'Term3'
+1565728495214	Rename local variable 'Term4'
+1565728501339	Rename local variable 'Term6'
+1565728508574	Rename local variable 'Term7'
+1565728511669	Rename local variable 'Term8'
+1565892547172	Rename type 'CyclicUsageEquipment'
+1565893238060	Rename type 'CyclicFixedUsageEquipment'
+1565893281012	Move compilation unit
+1565893626020	Delete element
+1565894077797	Rename local variable 'SB1'
+1565894082438	Rename local variable 'SB2'
+1565894086578	Rename local variable 'SB3'
+1565894091203	Rename local variable 'SB4'
+1565894279518	Rename local variable 'B1'
+1565894283642	Rename local variable 'B2'
+1565894286736	Rename local variable 'B3'
+1565894289861	Rename local variable 'B4'
+1565895672436	Delete element
+1565895731619	Rename local variable 'burnerSizes'
+1565899537966	Delete element
+1565900437562	Rename type 'TimeOfUsePerPeriod'
+1565901377556	Rename local variable 'minutesOfUse'
+1565901388728	Rename field '_minutesOfUse'
+1565903062256	Rename local variable 'minutesOfUse'
+1565904921204	Rename local variable 'Cool_cap'
+1565905529769	Move compilation unit
+1565905599439	Move compilation unit

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <projectName>Game of Life</projectName>
+    <projectStartTab>2|2</projectStartTab>
+    <projectView>Developer</projectView>
+    <versionTag>Complete Project</versionTag>
+    <updateSite>http://update.agentgui.org</updateSite>
+    <updateAutoConfiguration>0</updateAutoConfiguration>
+    <updateDateLastChecked>0</updateDateLastChecked>
+    <environmentModel>Squared</environmentModel>
+    <projectFeatures/>
+    <plugins/>
+    <subOntologies>
+        <subOntology>agentgui.ontology.AgentGUI_BaseOntology</subOntology>
+    </subOntologies>
+    <agentStartConfiguration>
+        <agentVector>
+            <agent agentReference="gol.acl.agents.GameOfLifeAgent">
+                <startArgumentVector>
+                    <startArgument position="1" ontologyReference="agentgui.ontology.TimeSeriesChart"/>
+                    <startArgument position="2" ontologyReference="agentgui.ontology.Simple_Boolean"/>
+                    <startArgument position="3" ontologyReference="agentgui.ontology.Simple_String"/>
+                </startArgumentVector>
+            </agent>
+        </agentVector>
+    </agentStartConfiguration>
+    <jadeConfiguration>
+        <skipUserRequestForJadeStart>true</skipUserRequestForJadeStart>
+        <useLocalPort>1099</useLocalPort>
+        <useLocalMtpPort>7778</useLocalMtpPort>
+        <mtpCreation>ConfiguredByIPandPort</mtpCreation>
+        <mtpIpAddress>Auto-Configuration</mtpIpAddress>
+        <mtpProtocol>HTTP</mtpProtocol>
+        <keyStoreFile>D:\10 Java Projects\AgentGUI\resources\security\Agent-HyGridKeyStore.jks</keyStoreFile>
+        <keyStorePassword>MTIzNDU2</keyStorePassword>
+        <trustStoreFile>D:\10 Java Projects\AgentGUI\resources\security\Agent-HyGridTrustStore.jks</trustStoreFile>
+        <trustStorePassword>MTIzNDU2</trustStorePassword>
+        <serviceList>
+            <service>agentgui.logging.DebugService</service>
+            <service>agentgui.simulationService.LoadService</service>
+            <service>jade.core.event.NotificationService</service>
+            <service>agentgui.simulationService.SimulationService</service>
+            <service>jade.core.mobility.AgentMobilityService</service>
+        </serviceList>
+    </jadeConfiguration>
+    <distributionSetup>
+        <autoSaveRealMetricsOnSimStop>false</autoSaveRealMetricsOnSimStop>
+        <doDynamicLoadBalancing>false</doDynamicLoadBalancing>
+        <doStaticLoadBalancing>true</doStaticLoadBalancing>
+        <dynamicLoadBalancingClass>agentgui.simulationService.balancing.DynamicLoadBalancing</dynamicLoadBalancingClass>
+        <evenDistribution>false</evenDistribution>
+        <immediatelyStartLoadRecording>false</immediatelyStartLoadRecording>
+        <loadRecordingInterval>500</loadRecordingInterval>
+        <numberOfAgents>18</numberOfAgents>
+        <numberOfContainer>1</numberOfContainer>
+        <remoteOnly>false</remoteOnly>
+        <showLoadMonitorAtPlatformStart>false</showLoadMonitorAtPlatformStart>
+        <showThreadMonitorAtPlatformStart>false</showThreadMonitorAtPlatformStart>
+        <staticLoadBalancingClass>gol.SimService.balancing.StartAndBalancing</staticLoadBalancingClass>
+        <useUserThresholds>false</useUserThresholds>
+        <userThresholds>
+            <thCpuH>80</thCpuH>
+            <thCpuL>5</thCpuL>
+            <thMemoH>80</thMemoH>
+            <thMemoL>5</thMemoL>
+            <thNoThreadsH>500</thNoThreadsH>
+            <thNoThreadsL>5</thNoThreadsL>
+        </userThresholds>
+    </distributionSetup>
+    <agentClassLoadMetricsTable>
+        <agentClassMetricDescriptionVector>
+            <agentClass>
+                <className>agent.class.UNKNOWN-AGENT-CLASS</className>
+                <realMetric>1.0</realMetric>
+                <realMetricAverage>3.47575176554742</realMetricAverage>
+                <realMetricMax>3.475751765547533</realMetricMax>
+                <realMetricMin>3.475751765547533</realMetricMin>
+                <userPredictedMetric>1.0</userPredictedMetric>
+            </agentClass>
+            <agentClass>
+                <className>system.class.-Regular-Thread-</className>
+                <realMetric>1.0</realMetric>
+                <realMetricAverage>5.746786754152532</realMetricAverage>
+                <realMetricMax>5.7467867541526045</realMetricMax>
+                <realMetricMin>5.7467867541526045</realMetricMin>
+                <userPredictedMetric>1.0</userPredictedMetric>
+            </agentClass>
+        </agentClassMetricDescriptionVector>
+        <useRealLoadMetric>false</useRealLoadMetric>
+    </agentClassLoadMetricsTable>
+    <remoteContainerConfiguration>
+        <jvmMemAllocInitial>32m</jvmMemAllocInitial>
+        <jvmMemAllocMaximum>128m</jvmMemAllocMaximum>
+        <preventUsageOfAlreadyUsedComputers>false</preventUsageOfAlreadyUsedComputers>
+        <showJADErmaGUI>true</showJADErmaGUI>
+    </remoteContainerConfiguration>
+    <simulationSetupCurrent>1250 Agents</simulationSetupCurrent>
+    <timeModelClass>agentgui.simulationService.time.TimeModelStroke</timeModelClass>
+    <simulationSetups>
+        <entry>
+            <key>0018 Agents</key>
+            <value>0018_agents.xml</value>
+        </entry>
+        <entry>
+            <key>0032 Agents</key>
+            <value>0032_agents.xml</value>
+        </entry>
+        <entry>
+            <key>0072 Agents</key>
+            <value>0072_agents.xml</value>
+        </entry>
+        <entry>
+            <key>0128 Agents</key>
+            <value>0128_agents.xml</value>
+        </entry>
+        <entry>
+            <key>0242 Agents</key>
+            <value>0242_agents.xml</value>
+        </entry>
+        <entry>
+            <key>0512 Agents</key>
+            <value>0512_agents.xml</value>
+        </entry>
+        <entry>
+            <key>0722 Agents</key>
+            <value>0722_agents.xml</value>
+        </entry>
+        <entry>
+            <key>0968 Agents</key>
+            <value>0968_agents.xml</value>
+        </entry>
+        <entry>
+            <key>1250 Agents</key>
+            <value>1250_agents.xml</value>
+        </entry>
+        <entry>
+            <key>1458 Agents</key>
+            <value>1458_agents.xml</value>
+        </entry>
+        <entry>
+            <key>1800 Agents</key>
+            <value>1800_agents.xml</value>
+        </entry>
+        <entry>
+            <key>2048 Agents</key>
+            <value>2048_agents.xml</value>
+        </entry>
+        <entry>
+            <key>4050 Agents</key>
+            <value>4050_agents.xml</value>
+        </entry>
+    </simulationSetups>
+</project>

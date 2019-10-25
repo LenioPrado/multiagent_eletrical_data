@@ -1,0 +1,36 @@
+package simulator.cases;
+
+import enums.EquipmentState;
+import equipment.Equipment;
+import equipment.cyclicusage.CyclicUsageParameter;
+import equipment.cyclicusage.PoolPump;
+import equipment.rates.Rates;
+import simulator.BaseSimulationCase;
+import time.FixedTimeOfUse;
+
+public class PoolPumpSimulation extends BaseSimulationCase {
+
+	public PoolPumpSimulation(Rates rates) throws Exception {
+		super(rates);
+	}
+	
+	@Override
+	public String getSimulationDescription() {
+		return "PoolPumpSimulation";
+	}
+
+	@Override
+	public void setSimulationValues() throws Exception {
+		new PoolPump(EquipmentState.ON, new CyclicUsageParameter(3, new FixedTimeOfUse(180, new double[] {5, 14, 22})));
+	}
+
+	@Override
+	public void resetSimulationValues() throws Exception {
+		new PoolPump(EquipmentState.OFF, new CyclicUsageParameter(3, new FixedTimeOfUse(180, new double[] {5, 14, 22})));
+	}
+	
+	@Override
+	protected Equipment getEquipment(EquipmentState state) throws Exception {
+		return 
+	}
+}

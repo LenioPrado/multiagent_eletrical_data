@@ -1,0 +1,17 @@
+package equipment.lighting;
+
+import enums.YearSeason;
+import equipment.rates.Rates;
+import time.MorningNightTimeOfUse;
+
+public class IncandescentLighting extends Lighting {
+	
+	public IncandescentLighting(int powerConsumption, LightingParameter lightingParameter, Rates rates) throws Exception {
+		super(powerConsumption, lightingParameter, rates);
+	}
+	
+	@Override
+	protected String getParamSuffix() {
+		return "";
+	}
+}
