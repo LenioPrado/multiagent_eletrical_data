@@ -4,6 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Program Files/MATLAB/R2016b/extern/engines/java/jar/engine.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/MATLAB/R2016b/toolbox/compiler_sdk/mps_clients/java/mps_client.jar"/>
-	<classpathentry kind="lib" path="E:/Develop/multiagenteletricaldata/trunk/source/MatlabEngine/neuroph_2.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/Develop/multiagent_eletrical_data/MatlabEngine/neuroph_2.3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
