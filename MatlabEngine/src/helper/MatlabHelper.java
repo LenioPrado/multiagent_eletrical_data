@@ -88,6 +88,18 @@ public class MatlabHelper {
 		return variable;
 	}
 	
+	public static <T> T feval(String function, Object parameter) {
+		T variable = null;
+		try {
+			System.out.println(String.format("Evaluating function '%s' with parameter '%s'.", function, parameter));
+			variable = getEngine().feval(function, parameter);
+		} catch (Exception e) {
+			System.out.println(String.format("Error evaluating function '%s' with parameter '%s'.", function, parameter));
+			e.printStackTrace();
+		}
+		return variable;
+	}
+	
 	public static <T> T getVariable(String variableName) {
 		T variable = null;
 		try {

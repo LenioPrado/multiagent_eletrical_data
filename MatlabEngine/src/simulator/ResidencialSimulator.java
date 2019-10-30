@@ -42,12 +42,8 @@ public class ResidencialSimulator {
 					BaseSimulationCase sim = simulationCases.get(i);
 					sim.setSimulationValues();
 					MatlabHelper.runSimulinkModel(modelName);
-					MatlabHelper.feval("processResults");
-					MatlabHelper.feval("processResults");
-					MatlabHelper.getEngine().eval(String.format("plotGenerationValues('%s_%d')", sim.getSimulationDescription(), i));
-					MatlabHelper.getEngine().eval(String.format("plotApplianceValues('%s_%d')", sim.getSimulationDescription(), i));
-					MatlabHelper.getEngine().eval(String.format("plotStateOfChargeValues('%s_%d')", sim.getSimulationDescription(), i));
-					MatlabHelper.getEngine().eval(String.format("plotLoadValues('%s_%d')", sim.getSimulationDescription(), i));					
+					MatlabHelper.feval("processResults", i);
+					MatlabHelper.getEngine().eval(String.format("plotLoadValues('%s_%d', %d)", sim.getSimulationDescription(), i, i));					
 					sim.resetSimulationValues();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -58,6 +54,10 @@ public class ResidencialSimulator {
 			System.out.println("Ending App...");
 		}
 	}
+	
+	//MatlabHelper.getEngine().eval(String.format("plotGenerationValues('%s_%d')", sim.getSimulationDescription(), i));
+	//MatlabHelper.getEngine().eval(String.format("plotApplianceValues('%s_%d')", sim.getSimulationDescription(), i));
+	//MatlabHelper.getEngine().eval(String.format("plotStateOfChargeValues('%s_%d')", sim.getSimulationDescription(), i));	
 	
 	private List<BaseSimulationCase> getSimulationCases() throws Exception {
 		List<BaseSimulationCase> simulationCases = new ArrayList<BaseSimulationCase>();		
