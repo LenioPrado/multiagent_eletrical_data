@@ -9,8 +9,8 @@ public class FixedTimeOfUse {
 		_minutesOfUse = minutesOfUse;
 		_clockTimesWhenIsUsed = clockTimesWhenIsUsed;
 		
-		if (clockTimesWhenIsUsed == null || clockTimesWhenIsUsed.length != 3) {
-			throw new Exception("ClockTimesWhenIsUsed vector must have 3 times usage values");
+		if (clockTimesWhenIsUsed == null || clockTimesWhenIsUsed.length < 1 || clockTimesWhenIsUsed.length > 3) {
+			throw new Exception("ClockTimesWhenIsUsed vector must have 1 to 3 elements");
 		}
 	}
 
@@ -27,10 +27,10 @@ public class FixedTimeOfUse {
 	}
 
 	public double getSecondTimeUsage() {
-		return _clockTimesWhenIsUsed[1];
+		return _clockTimesWhenIsUsed.length > 1 ? _clockTimesWhenIsUsed[1] : 0;
 	}
 
 	public double getThirdTimeUsage() {
-		return _clockTimesWhenIsUsed[2];
+		return _clockTimesWhenIsUsed.length > 2 ? _clockTimesWhenIsUsed[2] : 0;
 	}	
 }

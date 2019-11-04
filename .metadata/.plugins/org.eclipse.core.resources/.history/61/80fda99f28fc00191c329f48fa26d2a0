@@ -1,0 +1,51 @@
+package simulator.cases.group1;
+
+import enums.EquipmentState;
+import equipment.Equipment;
+import equipment.energysources.Battery;
+import equipment.energysources.Photovoltaic;
+import equipment.energysources.Wind;
+import equipment.rates.Rates;
+import simulator.BaseSimulationCase;
+import time.FixedTimeOfUse;
+
+public class BaseSimulationGroup1 extends BaseSimulationCase {
+		
+	public BaseSimulationGroup1(Rates rates) throws Exception {
+		super(rates);
+	}
+	
+	@Override
+	protected Equipment getEquipment(EquipmentState state) throws Exception {
+		return null;
+	}
+
+	@Override
+	public void setSimulationValues() throws Exception {		
+		setOnCaseValues(EquipmentState.ON);
+		setOffCaseValues(EquipmentState.OFF);
+	}
+
+	@Override
+	public void resetSimulationValues() throws Exception {
+		setOnCaseValues(EquipmentState.OFF);
+		setOffCaseValues(EquipmentState.OFF);
+		
+		setRoomsValues();
+	}
+	
+	@Override
+	public String getSimulationDescription() {
+		return "SimulationCase";
+	}
+	
+	private void setOnCaseValues(EquipmentState state) throws Exception {
+
+	}
+	
+	private void setOffCaseValues(EquipmentState state) throws Exception {		
+		new Battery(state, new FixedTimeOfUse(50, new double[] {10, 14, 16}), getBatteryHoursPower(), 1500, getRates());				
+		new Photovoltaic(state, getPhotovoltaicHoursRadiation(), getRates());			
+		new Wind(state, getWindHoursPower(), getRates());
+	}
+}

@@ -14,10 +14,10 @@ public abstract class Lighting extends Equipment {
 		
 		addValue("Power"+suffix, powerConsumption);
 		addValue("H_Many"+suffix, lightingParameter.getHowManyBulbs());
-		addValue("ON_Morning"+suffix, lightingParameter.getTimeOfUse().getMorningAmountOfPowerOnHours());
-		addValue("hrs_Morning"+suffix, lightingParameter.getTimeOfUse().getMorningClockTimeWhenIsUsed());
-		addValue("ON_Night"+suffix, lightingParameter.getTimeOfUse().getNightAmountOfPowerOnHours());
-		addValue("hrs_Night"+suffix, lightingParameter.getTimeOfUse().getNightClockTimeWhenIsUsed());
+		addValue("ON_Morning"+suffix, lightingParameter.getTimeOfUse().getMorningClockTimeWhenIsUsed());
+		addValue("ON_Night"+suffix, lightingParameter.getTimeOfUse().getNightClockTimeWhenIsUsed());
+		addValue("hrs_Morning"+suffix, lightingParameter.getTimeOfUse().getMorningAmountOfPowerOnHours());		
+		addValue("hrs_Night"+suffix, lightingParameter.getTimeOfUse().getNightAmountOfPowerOnHours());
 	}
 	
 	protected abstract String getParamSuffix();

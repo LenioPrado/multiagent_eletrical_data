@@ -3,7 +3,7 @@ package time;
 public class AllDayPeriodsTimeOfUse extends VariableTimeOfUse {
 
 	public AllDayPeriodsTimeOfUse(double[] clockTimesWhenIsUsed, double[] amountOfPowerOnHours) throws Exception {
-		super(3, clockTimesWhenIsUsed, amountOfPowerOnHours);
+		super(clockTimesWhenIsUsed.length, clockTimesWhenIsUsed, amountOfPowerOnHours);
 	}
 	
 	public double getMorningClockTimeWhenIsUsed() {

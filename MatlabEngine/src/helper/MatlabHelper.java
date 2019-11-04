@@ -19,10 +19,10 @@ public class MatlabHelper {
 		System.out.println("Simulink model loaded!!!");
 	}	
 
-	public static void runSimulinkModel(String modelName) throws Exception {
+	public static void runSimulinkModel(String modelName, int simulationCounter) throws Exception {
 		String options = "'SaveOutput','on','OutputSaveName','yOut','SaveTime','on','TimeSaveName','tOut');";
 		String toLoad = String.format("simOut = sim('%s',%s", modelName, options);
-		String waitMessage = "Running Simulation...";
+		String waitMessage = String.format("Running Simulation '%d'...", simulationCounter);
 
 		executeAndWait(toLoad, waitMessage, 5000);
 		System.out.println("Simulink terminated!!!");

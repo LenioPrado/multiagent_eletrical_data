@@ -9,6 +9,10 @@ public abstract class VariableTimeOfUse {
 		_clockTimeWhenIsUsed = clockTimeWhenIsUsed;
 		_amountOfPowerOnHours = amountOfPowerOnHours;
 		
+		if (numberOfPeriods <= 0) {
+			throw new Exception("NumberOfPeriods must be non negative!!!");
+		}
+		
 		String lenghtError = "Vector %s must have %d times usage values!!!";
 		if (clockTimeWhenIsUsed == null || clockTimeWhenIsUsed.length != numberOfPeriods) {
 			throw new Exception(String.format(lenghtError, "ClockTimeWhenIsUsed", numberOfPeriods));
@@ -27,23 +31,23 @@ public abstract class VariableTimeOfUse {
 		return _clockTimeWhenIsUsed[0];
 	}
 	
-	protected double getFirstAmountOfPowerOnHours() {
+	protected double getFirstAmountOfPowerOnHours() {		
 		return _amountOfPowerOnHours[0];
 	}
 
-	protected double getSecondClockTimeWhenIsUsed() {
-		return _clockTimeWhenIsUsed[1];
+	protected double getSecondClockTimeWhenIsUsed() {		
+		return _clockTimeWhenIsUsed.length > 1 ? _clockTimeWhenIsUsed[1] : 1;
 	}
 
 	protected double getSecondAmountOfPowerOnHours() {
-		return _amountOfPowerOnHours[1];
+		return _amountOfPowerOnHours.length > 1 ? _amountOfPowerOnHours[1] : 0;
 	}
 	
 	protected double getThirdClockTimeWhenIsUsed() {
-		return _clockTimeWhenIsUsed[2];
+		return _clockTimeWhenIsUsed.length > 2 ? _clockTimeWhenIsUsed[2] : 1;
 	}
 	
 	protected double getThirdAmountOfPowerOnHours() {
-		return _amountOfPowerOnHours[2];
+		return _amountOfPowerOnHours.length > 2 ? _amountOfPowerOnHours[2] : 0;
 	}	
 }

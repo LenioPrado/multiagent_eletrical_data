@@ -4,6 +4,10 @@ public class Room extends House {
 
 	private int _roomNumber;
 
+	public Room(int roomNumber, double length, double width, double height, double windowLength, double windowHeight) {
+		
+	}
+	
 	public <T> Room(int roomNumber, T[] term1Gains, T[] term2Gains, T loss, T integrator1, T integrator2) throws Exception {
 		_roomNumber = roomNumber;		
 
