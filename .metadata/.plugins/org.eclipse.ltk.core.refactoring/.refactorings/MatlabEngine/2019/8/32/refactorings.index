@@ -1,6 +1,0 @@
-1565027941232	Delete elements
-1565113537538	Rename method 'getMatlabEngine'
-1565121369191	Extract method 'getResults'
-1565292296134	Rename local variable 'bla'
-1565293347736	Extract method 'passStructValue'
-1565294618617	Rename local variable 'value'

@@ -1,4 +1,0 @@
-#Tomcat publish data
-#Thu Oct 10 11:32:58 BRT 2019
-org.eclipse.jst.jee.server\:ElectricalData=E\:\\apache-tomcat-8.5.41\\wtpwebapps\\ElectricalData
-org.eclipse.jst.jee.server\:JavaWebService=E\:\\apache-tomcat-8.5.41\\wtpwebapps\\JavaWebService
