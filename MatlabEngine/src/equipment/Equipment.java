@@ -8,8 +8,8 @@ public abstract class Equipment {
 		add(paramName, "Value", String.valueOf(value));
 	}
 	
-	protected void addInitialCondition(String paramName, String value) throws Exception {
-		add(paramName, "InitialCondition", value);
+	protected <T> void addInitialCondition(String paramName, T value) throws Exception {
+		add(paramName, "InitialCondition", String.valueOf(value));
 	}
 	
 	protected void addGain(String paramName, double value) throws Exception {

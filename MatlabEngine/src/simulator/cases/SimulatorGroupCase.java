@@ -1,12 +1,12 @@
-package simulator.cases.group3;
+package simulator.cases.group1;
 
 import enums.EquipmentState;
 import enums.EquipmentType;
 import enums.Hotwater;
+import enums.RoomWindow;
 import enums.StoveBurnerSize;
 import enums.WaterHeaterType;
 import enums.WaterTemperature;
-import equipment.Equipment;
 import equipment.appliances.Refrigerator;
 import equipment.appliances.Stove;
 import equipment.cyclicusage.Clothwasher;
@@ -14,9 +14,6 @@ import equipment.cyclicusage.CyclicUsageParameter;
 import equipment.cyclicusage.Dishwasher;
 import equipment.cyclicusage.Dryer;
 import equipment.cyclicusage.PoolPump;
-import equipment.energysources.Battery;
-import equipment.energysources.Photovoltaic;
-import equipment.energysources.Wind;
 import equipment.hvac.AirConditioner;
 import equipment.hvac.WaterHeater;
 import equipment.hvac.WaterHeaterParameters;
@@ -25,20 +22,16 @@ import equipment.lighting.IncandescentLighting;
 import equipment.lighting.LightingParameter;
 import equipment.lighting.TubeFluorescentLighting;
 import equipment.rates.Rates;
+import home.Room;
 import simulator.BaseSimulationCase;
 import time.AllDayPeriodsTimeOfUse;
 import time.FixedTimeOfUse;
 import time.MorningNightTimeOfUse;
 
-public class BaseSimulationGroup3 extends BaseSimulationCase {
+public class SimulatorGroup1Case1 extends BaseSimulationCase {
 		
-	public BaseSimulationGroup3(Rates rates) throws Exception {
+	public SimulatorGroup1Case1(Rates rates) throws Exception {
 		super(rates);
-	}
-	
-	@Override
-	protected Equipment getEquipment(EquipmentState state) throws Exception {
-		return null;
 	}
 
 	@Override
@@ -51,28 +44,18 @@ public class BaseSimulationGroup3 extends BaseSimulationCase {
 	public void resetSimulationValues() throws Exception {
 		setOnCaseValues(EquipmentState.OFF);
 		setOffCaseValues(EquipmentState.OFF);
-		
-		setRoomsValues();
 	}
 	
 	@Override
 	public String getSimulationDescription() {
-		return "SimulationGroup3Case";
+		return "SimulationGroup1Case1";
 	}
 	
 	private void setOnCaseValues(EquipmentState state) throws Exception {
-
+		//OnCaseValuesHere
 	}
 	
 	private void setOffCaseValues(EquipmentState state) throws Exception {		
-		new Battery(state, new FixedTimeOfUse(50, new double[] {10, 14, 16}), getBatteryHoursPower(), 1500, getRates());				
-		new Photovoltaic(state, getPhotovoltaicHoursRadiation(), getRates());			
-		new Wind(state, getWindHoursPower(), getRates());
-		
-		new Dryer(state, new CyclicUsageParameter(3, new FixedTimeOfUse(80, new double[] {10, 15, 20})));
-		new PoolPump(state, new CyclicUsageParameter(3, new FixedTimeOfUse(180, new double[] {5, 14, 22})));
-		new WaterHeater(state, new WaterHeaterParameters(WaterHeaterType.ELECTRIC, 10, 20, 40000, 55, 184,  0.62f), getRates());
-		new Dishwasher(state, 241, new CyclicUsageParameter(2, new FixedTimeOfUse(48, new double[] {11,13})), EquipmentType.ENERGY_STAR, Hotwater.DISCONNECTED);
-		new AirConditioner(state, 30000, getRates());
+		//OffCaseValuesHere
 	}
 }

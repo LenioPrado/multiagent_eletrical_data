@@ -2,11 +2,12 @@ package equipment.hvac;
 
 import enums.EquipmentState;
 import equipment.rates.Rates;
+import home.Room;
 
 public class Furnace extends Acclimatization {
 
-	public Furnace(EquipmentState state, double BTU, Rates rates) throws Exception {
-		super(state, rates);
+	public Furnace(EquipmentState state, Room[] rooms, double BTU, Rates rates) throws Exception {
+		super(state, rooms, rates);
 		
 		double coolCap = calculateCoolCap(BTU);
 		

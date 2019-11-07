@@ -176,12 +176,16 @@ public class MatlabHelper {
 		eval(toFolder);
 	}
 	
-	public static void showStructValues(Struct struct) {		
+	public static void showStructValues(Struct struct) {
+		showStructValues(struct, null);
+	}
+	
+	public static void showStructValues(Struct struct, String parent) {		
 		for (String key : struct.keySet()) {
 			Object value = struct.get(key);
-			if (value.getClass() == Struct.class) {
+			if (value.getClass() == Struct.class) {				
 				Struct structValue = (Struct) value;
-				showStructValues(structValue);
+				showStructValues(structValue, key);
 			} else {
 				String valueContent = "";
 				if (value.getClass() == double[].class) {
@@ -190,7 +194,10 @@ public class MatlabHelper {
 				} else {
 					valueContent = value.toString();
 				}
-				System.out.println("Key: '" + key + "' Value: " + valueContent);
+				if(parent != null)
+					System.out.println("Key: '" + parent + "." + key + "', Value: " + valueContent);
+				else
+					System.out.println("Key: '" + key + "', Value: " + valueContent);
 			}
 		}
 	}

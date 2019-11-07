@@ -1,11 +1,15 @@
 package demo;
 import java.util.Arrays;
 import java.util.Random;
-
 import com.mathworks.matlab.types.HandleObject;
 import com.mathworks.matlab.types.Struct;
-
+import enums.EquipmentState;
+import enums.RoomWindow;
+import enums.YearSeason;
+import equipment.hvac.AirConditioner;
+import equipment.rates.Rates;
 import helper.MatlabHelper;
+import home.Room;
 
 public class Tentativas {
 
@@ -14,8 +18,9 @@ public class Tentativas {
 
 	public static void main(String[] args) throws Exception {
 				
-		generateRandom();
-		//Tentativas t = new Tentativas();
+		//generateRandom();
+		Tentativas t = new Tentativas();
+		t.testAcclimatization();
 		//t.runVdp();
 		// t.callEvalFunction();
 		// t.callFunction();
@@ -49,16 +54,44 @@ public class Tentativas {
 		System.out.println("MATLAB workspace variables " + Arrays.toString(w));
 		MatlabHelper.closeEngine();
 	}
+	
+	public void testAcclimatization() throws Exception {
+		MatlabHelper.changeToFolder("E:\\Develop\\PhD Softwares\\SRLS - Smart Residential Load Simulator\\SRLS2\\");
+		MatlabHelper.loadSimulinkModel("E:\\Develop\\PhD Softwares\\SRLS - Smart Residential Load Simulator\\SRLS2\\", "Energy_Cost.mdl");
+		
+		Room r1 = new Room(4, 4, 2, 1, 1, RoomWindow.YES);
+		Room r2 = new Room(3, 2, 2.5, 1.1, 1.2, RoomWindow.YES);
+		Room r3 = new Room(2.5, 2.5, 3, 1.5, 1.6, RoomWindow.YES);
+		Room r4 = new Room(3.8, 2.9, 2.5, 1.3, 1.4, RoomWindow.YES);
+
+		Room[] rooms = {r1, r2, r3, r4};
+		Rates rates = new Rates(6.2, 9.2, 10.8, 35.7, YearSeason.SUMMER);
+		new AirConditioner(EquipmentState.ON, rooms, 48000, rates);
+	}
 
 	public void PassStruct() throws Exception {
-		double[] y = { 1.0, 2.0, 3.0, 4.0, 5.0 };
-		HandleObject h = MatlabHelper.getEngine().feval("plot", y);
-		MatlabHelper.eval("pause(5)");
-		double[] color = { 1.0, 0.5, 0.7 };
-		Struct s = new Struct("Color", color, "LineWidth", 2);
+		MatlabHelper.changeToFolder("E:\\Develop\\PhD Softwares\\SRLS - Smart Residential Load Simulator\\SRLS2\\");
+		MatlabHelper.loadSimulinkModel("E:\\Develop\\PhD Softwares\\SRLS - Smart Residential Load Simulator\\SRLS2\\", "Energy_Cost.mdl");
 
-		MatlabHelper.getEngine().feval("set", h, s);
-		MatlabHelper.eval("print('myPlot', '-djpeg')");
+		Struct houseParameters = new Struct(
+			"LR1", "4", "LW1", "4", "LH1", "2", "Lwin1", "1", "Wwin1", "1", "noyesWindows1", "2",
+			"LR2", "3", "LW2", "2", "LH2", "2.5", "Lwin2", "1.1", "Wwin2", "1.2", "noyesWindows2", "2",
+			"LR3", "2.5", "LW3", "2.5", "LH3", "3", "Lwin3", "1.5", "Wwin3", "1.6", "noyesWindows3", "2",
+			"LR4", "3.8", "LW4", "2.9", "LH4", "2.5", "Lwin4", "1.3", "Wwin4", "1.4", "noyesWindows4", "2",				
+			"No_of_rooms", "4"
+		);
+
+		
+		Struct h1 = MatlabHelper.getEngine().feval("HouseCalculation", houseParameters);
+		//Struct h1 = MatlabHelper.getEngine().feval("HouseCalculationValues", 2);
+		
+		if(h1 != null) {
+			MatlabHelper.showStructValues(h1);
+		}
+		//Struct s = new Struct("Color", color, "LineWidth", 2);
+
+		//MatlabHelper.getEngine().feval("set", h, s);
+		//MatlabHelper.eval("print('myPlot', '-djpeg')");
 		MatlabHelper.closeEngine();
 	}
 

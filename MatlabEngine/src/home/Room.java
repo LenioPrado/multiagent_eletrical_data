@@ -1,65 +1,80 @@
 package home;
 
+import enums.RoomWindow;
+
 public class Room extends House {
 
 	private int _roomNumber;
-
-	public Room(int roomNumber, double length, double width, double height, double windowLength, double windowHeight) {
-		
-	}
+	private double _length;
+	private double _width;
+	private	double _height;
+	private	double _windowLength; 
+	private	double _windowWidth;
+	private RoomWindow _hasWindows;
 	
-	public <T> Room(int roomNumber, T[] term1Gains, T[] term2Gains, T loss, T integrator1, T integrator2) throws Exception {
-		_roomNumber = roomNumber;		
-
-		if (term1Gains == null || term1Gains.length != 4) {
-			throw new Exception("Gains vector 1 must have 4 elements!!!");
-		}
-
-		if (term2Gains == null || term2Gains.length != 5) {
-			throw new Exception("Gains vector 2 must have 5 elements!!!");
-		}
-
-		addValue("%Loss", String.valueOf(loss));
-		process(term1Gains, term2Gains, integrator1, integrator2);
-	}
-
-	private <T> void process(T[] term1Gains, T[] term2Gains, T integrator1, T integrator2) throws Exception {
-		for (int termCount = 1; termCount <= 2; termCount++) {
-			T[] current = termCount == 1 ? term1Gains : term2Gains;
-			String termName = termCount == 1 ? "term1" : "term2";
-			for (int gains = 0; gains < current.length; gains++) {
-				String paramName = "";
-				
-				switch (gains) {
-				case 0:
-					paramName = "1st";
-					break;
-				case 1:
-					paramName = "2nd";
-					break;
-				case 2:
-					paramName = "3th";
-					break;
-				case 3:
-					paramName = "4th";
-					break;	
-				case 4:
-					paramName = "5th";
-					break;	
-				}
-
-				String termParamName = String.format("%s %s", paramName, termName);
-
-				addGain(termParamName, Double.parseDouble(current[gains].toString()));
-			}
-		}
-		
-		addInitialCondition("Integrator1", String.valueOf(integrator1));
-		addInitialCondition("Integrator1", String.valueOf(integrator2));
+	public Room(double length, double width, double height, double windowLength, double windowWidth, RoomWindow hasWindows) {
+		_length = length;
+		_width = width;
+		_height = height;
+		_windowLength = windowLength;
+		_windowWidth = windowWidth;
+		_hasWindows = hasWindows;		
 	}
 
 	@Override
 	protected String getBaseParamPath() {
 		return super.getBaseParamPath() + String.format("Room_%d/", _roomNumber);
+	}
+	
+	public void setParams(double Rw, double Rc, double Cw, double Ci, double b, double bSum) throws Exception {
+		setParams(Rw, Rc, Cw, Ci, b, bSum, 1);
+	}
+	
+	public void  setZeroParams() throws Exception {
+		setParams(1, 1, 1, 1, 1, 1, 0);
+	}
+	
+	private void setParams(double Rw, double Rc, double Cw, double Ci, double b, double bSum, int multiplier) throws Exception {
+		addValue("%Loss", multiplier * (b/bSum));
+	    addInitialCondition("Integrator1", multiplier * (21));	
+	
+		addGain("1st term1", multiplier * (1/Cw));
+		addGain("2nd term1", multiplier * (1/(Rw*Cw)));
+		addGain("3th term1", multiplier * (1/(Rw*Cw)));
+		addGain("4th term1", multiplier * (2/(Rw*Cw)));
+			
+		addGain("1st term2", multiplier * (1/Ci));
+		addGain("2nd term2", multiplier * (1/Ci));
+		addGain("3th term2", multiplier * ((1/Ci) * ((1/Rw) + (1/Rc))));
+		addGain("4th term2", multiplier * (1/(Rw*Ci)));
+		addGain("5th term2", multiplier * (1/(Rc*Ci)));
+	}
+
+	public void setRoomNumber(int roomNumber) {
+		_roomNumber = roomNumber;
+	}
+
+	public double getLength() {
+		return _length;
+	}
+
+	public double getWidth() {
+		return _width;
+	}
+
+	public double getHeight() {
+		return _height;
+	}
+
+	public double getWindowLength() {
+		return _windowLength;
+	}
+
+	public double getWindowWidth() {
+		return _windowWidth;
+	}
+
+	public RoomWindow getHasWindows() {
+		return _hasWindows;
 	}
 }
