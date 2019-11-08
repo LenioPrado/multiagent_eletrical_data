@@ -10,6 +10,7 @@ import equipment.hvac.AirConditioner;
 import equipment.rates.Rates;
 import helper.MatlabHelper;
 import home.Room;
+import home.Thermostat;
 
 public class Tentativas {
 
@@ -66,7 +67,8 @@ public class Tentativas {
 
 		Room[] rooms = {r1, r2, r3, r4};
 		Rates rates = new Rates(6.2, 9.2, 10.8, 35.7, YearSeason.SUMMER);
-		new AirConditioner(EquipmentState.ON, rooms, 48000, rates);
+		Thermostat thermostat = new Thermostat(25.8,  new double[] {8,11,13,16});
+		new AirConditioner(EquipmentState.ON, thermostat, rooms, 48000, rates);
 	}
 
 	public void PassStruct() throws Exception {

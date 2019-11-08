@@ -9,15 +9,9 @@ public class Stove extends ConnectableEquipment {
 
 	public Stove(EquipmentState state, AllDayPeriodsTimeOfUse timeOfUse, StoveBurnerSize burnersSizes, double[] burnersIntensity) throws Exception {
 		super(state);
-
-//		if (burnersSizes == null || burnersSizes.length == 0 )
-//			throw new Exception("BurnersSizes vector cannot be null or empty!!!");
 		
 		if (burnersIntensity == null || burnersIntensity.length == 0 )
 			throw new Exception("BurnersIntensity vector cannot be null or empty!!!");
-		
-//		if (burnersSizes.length != burnersIntensity.length)
-//			throw new Exception("BurnersSizes and BurnersIntensity vectors must have the same size!!!");
 		
 		if (timeOfUse == null)
 			throw new Exception("TimeOfUse vector cannot be null or empty!!!");		

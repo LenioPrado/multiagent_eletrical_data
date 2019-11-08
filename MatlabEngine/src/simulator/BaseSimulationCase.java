@@ -27,6 +27,7 @@ import equipment.lighting.LightingParameter;
 import equipment.lighting.TubeFluorescentLighting;
 import equipment.rates.Rates;
 import home.Room;
+import home.Thermostat;
 import time.AllDayPeriodsTimeOfUse;
 import time.FixedTimeOfUse;
 import time.MorningNightTimeOfUse;
@@ -65,7 +66,11 @@ public abstract class BaseSimulationCase {
 		};
 	}
 	
-	protected Room[] getRooms() throws Exception {
+	private Thermostat getThermostat() throws Exception {
+		return new Thermostat(21,  new double[] {10,12,15,16});
+	}	
+	
+	private Room[] getRooms() throws Exception {
 		Room r1 = new Room(1, 1, 1, 1, 1, RoomWindow.YES);
 		Room r2 = new Room(1, 1, 1, 1, 1, RoomWindow.YES);
 		Room r3 = new Room(1, 1, 1, 1, 1, RoomWindow.YES);
@@ -75,11 +80,11 @@ public abstract class BaseSimulationCase {
 	}
 	
 	protected void createOffAirConditioner() throws Exception {
-		new AirConditioner(_offState, getRooms(), 30000, getRates());
+		new AirConditioner(_offState, getThermostat(), getRooms(), 30000, getRates());
 	}
 	
 	protected void createOffFurnace() throws Exception {
-		new Furnace(_offState, getRooms(), 30000, getRates());
+		new Furnace(_offState, getThermostat(), getRooms(), 30000, getRates());
 	}
 	
 	protected void createOffClothwasher() throws Exception {

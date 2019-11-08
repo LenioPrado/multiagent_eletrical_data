@@ -28,9 +28,9 @@ public class ResidencialSimulator {
 					System.out.println("Simulation: " + (counter+1));
 					BaseSimulationCase sim = simulationCases.get(counter);
 					sim.setSimulationValues();
-					MatlabHelper.runSimulinkModel(modelName, counter);
-					MatlabHelper.feval("processResults", counter);
-					MatlabHelper.getEngine().eval(String.format("plotLoadValues('%s_%d', %d)", sim.getSimulationDescription(), counter, counter));					
+					MatlabHelper.runSimulinkModel(modelName, counter+1);
+					MatlabHelper.feval("processResults", counter+1);
+					MatlabHelper.getEngine().eval(String.format("plotLoadValues('%s_%d', %d)", sim.getSimulationDescription(), counter+1, counter+1));					
 					sim.resetSimulationValues();
 				} catch (Exception e) {
 					e.printStackTrace();

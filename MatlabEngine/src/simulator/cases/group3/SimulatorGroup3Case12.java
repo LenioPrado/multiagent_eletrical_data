@@ -16,6 +16,7 @@ import equipment.lighting.LightingParameter;
 import equipment.lighting.TubeFluorescentLighting;
 import equipment.rates.Rates;
 import home.Room;
+import home.Thermostat;
 import simulator.BaseSimulationCase;
 import time.AllDayPeriodsTimeOfUse;
 import time.FixedTimeOfUse;
@@ -45,16 +46,15 @@ public class SimulatorGroup3Case12 extends BaseSimulationCase {
 	}
 	
 	private void setOnCaseValues(EquipmentState state) throws Exception {
-		new TubeFluorescentLighting(30, new LightingParameter(2, new MorningNightTimeOfUse(new double[] {2,18}, new double[] {5,2})), getRates());
-		new Stove(state, new AllDayPeriodsTimeOfUse(new double[] {5}, new double[] {1.03}), StoveBurnerSize.SIX, new double[] {61,88,34,78});
-		new Room(3.52,3.15,2.86,1.82,1.94, RoomWindow.YES);
-		new Room(2.65,3.67,2.36,2.22,1.06, RoomWindow.YES);
-		new Room(3.3,2.58,3.22,2.13,2.41, RoomWindow.YES);
-		new Room(2.58,4.99,2.1,1.05,1.58, RoomWindow.YES);
-		new Refrigerator(state, 127, 1.1, 1, 1.7, getRates());
-		new IncandescentLighting(81, new LightingParameter(3, new MorningNightTimeOfUse(new double[] {9,18}, new double[] {3,3})), getRates());
-		new CompactFluorescentLighting(28, new LightingParameter(6, new MorningNightTimeOfUse(new double[] {0,23}, new double[] {4,2})), getRates());
-		new Clothwasher(state, 161, new CyclicUsageParameter(2, new FixedTimeOfUse(36, new double[] {8,14})), WaterTemperature.HOT, EquipmentType.ENERGY_STAR, Hotwater.CONNECTED);
+		new TubeFluorescentLighting(35, new LightingParameter(5, new MorningNightTimeOfUse(new double[] {3,18}, new double[] {2,3})), getRates());
+		new Thermostat(16,  new double[] {7,12,13,17});
+		new Stove(state, new AllDayPeriodsTimeOfUse(new double[] {9,17,20}, new double[] {0.78,0.85,1.21}), StoveBurnerSize.NINE, new double[] {13,59,83,58});
+		new Room(2.68,2.44,3.32,1.02,1.86, RoomWindow.YES);
+		new Room(2.43,4.52,2.37,2.28,2.24, RoomWindow.YES);
+		new Refrigerator(state, 127, 1, 1.2, 1.4, getRates());
+		new IncandescentLighting(99, new LightingParameter(1, new MorningNightTimeOfUse(new double[] {6,20}, new double[] {5,1})), getRates());
+		new CompactFluorescentLighting(31, new LightingParameter(5, new MorningNightTimeOfUse(new double[] {5,20}, new double[] {2,1})), getRates());
+		new Clothwasher(state, 245, new CyclicUsageParameter(1, new FixedTimeOfUse(72, new double[] {9})), WaterTemperature.HOT, EquipmentType.LOW_EFFICIENCY, Hotwater.CONNECTED);
 	}
 	
 	private void setOffCaseValues(EquipmentState state) throws Exception {		
@@ -62,6 +62,7 @@ public class SimulatorGroup3Case12 extends BaseSimulationCase {
 		createOffWaterHeater();
 		createOffPoolPump();
 		createOffPhotovoltaic();
+		createOffFurnace();
 		createOffDryer();
 		createOffDishwasher();
 		createOffBattery();

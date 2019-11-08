@@ -8,13 +8,14 @@ import equipment.RatedConnectableEquipment;
 import equipment.rates.Rates;
 import helper.MatlabHelper;
 import home.Room;
+import home.Thermostat;
 
 public abstract class Acclimatization extends RatedConnectableEquipment {
 	
 	private Room[] _rooms;
 	private Room[] _fourRooms;
 	
-	public Acclimatization(EquipmentState state, Room[] rooms, Rates rates) throws Exception {
+	public Acclimatization(EquipmentState state, Thermostat thermostat, Room[] rooms, Rates rates) throws Exception {
 		super(state, rates);
 		
 		_rooms = rooms;
@@ -22,8 +23,15 @@ public abstract class Acclimatization extends RatedConnectableEquipment {
 		if (_rooms == null || _rooms.length < 1 || _rooms.length > 4) {
 			throw new Exception("Rooms vector must have 1 to 4 elements");
 		}
+		
+		thermostat.setParameters();
 
 		addGain("Cost_AA/AcHt", 1);
+		
+		double TemperatureVariationValue = 2.5;
+		
+		addSpecificKeyValue("Relay","OnSwitchValue",TemperatureVariationValue);
+		addSpecificKeyValue("Relay","OffSwitchValue",-TemperatureVariationValue);
 		
 		Struct thermalValues = getThermalValues();
 		setSimulationParameters(thermalValues);
