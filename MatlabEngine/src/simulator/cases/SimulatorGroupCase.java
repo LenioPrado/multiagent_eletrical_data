@@ -49,7 +49,7 @@ public class SimulatorGroup1Case1 extends BaseSimulationCase {
 	
 	@Override
 	public String getSimulationDescription() {
-		return "SimulationGroup1Case1";
+		return "SimulatorGroup1Case1";
 	}
 	
 	private void setOnCaseValues(EquipmentState state) throws Exception {
