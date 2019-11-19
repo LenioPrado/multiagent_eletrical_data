@@ -61,7 +61,6 @@ public class SimulatorGroup3Case19 extends BaseSimulationCase {
 		createOffWaterHeater();
 		createOffPoolPump();
 		createOffPhotovoltaic();
-		createOffFurnace();
 		createOffDryer();
 		createOffDishwasher();
 		createOffBattery();

@@ -62,16 +62,16 @@ public class ResidencialSimulator {
 		simulationCases.add(new SimulatorGroup1Case8(rates));
 		simulationCases.add(new SimulatorGroup1Case9(rates));
 		simulationCases.add(new SimulatorGroup1Case10(rates));
-		simulationCases.add(new SimulatorGroup1Case11(rates));
-		simulationCases.add(new SimulatorGroup1Case12(rates));
-		simulationCases.add(new SimulatorGroup1Case13(rates));
-		simulationCases.add(new SimulatorGroup1Case14(rates));
-		simulationCases.add(new SimulatorGroup1Case15(rates));
-		simulationCases.add(new SimulatorGroup1Case16(rates));
-		simulationCases.add(new SimulatorGroup1Case17(rates));
-		simulationCases.add(new SimulatorGroup1Case18(rates));
-		simulationCases.add(new SimulatorGroup1Case19(rates));
-		simulationCases.add(new SimulatorGroup1Case20(rates));
+//		simulationCases.add(new SimulatorGroup1Case11(rates));
+//		simulationCases.add(new SimulatorGroup1Case12(rates));
+//		simulationCases.add(new SimulatorGroup1Case13(rates));
+//		simulationCases.add(new SimulatorGroup1Case14(rates));
+//		simulationCases.add(new SimulatorGroup1Case15(rates));
+//		simulationCases.add(new SimulatorGroup1Case16(rates));
+//		simulationCases.add(new SimulatorGroup1Case17(rates));
+//		simulationCases.add(new SimulatorGroup1Case18(rates));
+//		simulationCases.add(new SimulatorGroup1Case19(rates));
+//		simulationCases.add(new SimulatorGroup1Case20(rates));
 		
 		// Group 2 Cases
 		simulationCases.add(new SimulatorGroup2Case1(rates));
@@ -84,16 +84,16 @@ public class ResidencialSimulator {
 		simulationCases.add(new SimulatorGroup2Case8(rates));
 		simulationCases.add(new SimulatorGroup2Case9(rates));
 		simulationCases.add(new SimulatorGroup2Case10(rates));
-		simulationCases.add(new SimulatorGroup2Case11(rates));
-		simulationCases.add(new SimulatorGroup2Case12(rates));
-		simulationCases.add(new SimulatorGroup2Case13(rates));
-		simulationCases.add(new SimulatorGroup2Case14(rates));
-		simulationCases.add(new SimulatorGroup2Case15(rates));
-		simulationCases.add(new SimulatorGroup2Case16(rates));
-		simulationCases.add(new SimulatorGroup2Case17(rates));
-		simulationCases.add(new SimulatorGroup2Case18(rates));
-		simulationCases.add(new SimulatorGroup2Case19(rates));
-		simulationCases.add(new SimulatorGroup2Case20(rates));
+//		simulationCases.add(new SimulatorGroup2Case11(rates));
+//		simulationCases.add(new SimulatorGroup2Case12(rates));
+//		simulationCases.add(new SimulatorGroup2Case13(rates));
+//		simulationCases.add(new SimulatorGroup2Case14(rates));
+//		simulationCases.add(new SimulatorGroup2Case15(rates));
+//		simulationCases.add(new SimulatorGroup2Case16(rates));
+//		simulationCases.add(new SimulatorGroup2Case17(rates));
+//		simulationCases.add(new SimulatorGroup2Case18(rates));
+//		simulationCases.add(new SimulatorGroup2Case19(rates));
+//		simulationCases.add(new SimulatorGroup2Case20(rates));
 
 		// Group 3 Cases
 		simulationCases.add(new SimulatorGroup3Case1(rates));
@@ -106,16 +106,16 @@ public class ResidencialSimulator {
 		simulationCases.add(new SimulatorGroup3Case8(rates));
 		simulationCases.add(new SimulatorGroup3Case9(rates));
 		simulationCases.add(new SimulatorGroup3Case10(rates));
-		simulationCases.add(new SimulatorGroup3Case11(rates));
-		simulationCases.add(new SimulatorGroup3Case12(rates));
-		simulationCases.add(new SimulatorGroup3Case13(rates));
-		simulationCases.add(new SimulatorGroup3Case14(rates));
-		simulationCases.add(new SimulatorGroup3Case15(rates));
-		simulationCases.add(new SimulatorGroup3Case16(rates));
-		simulationCases.add(new SimulatorGroup3Case17(rates));
-		simulationCases.add(new SimulatorGroup3Case18(rates));
-		simulationCases.add(new SimulatorGroup3Case19(rates));
-		simulationCases.add(new SimulatorGroup3Case20(rates));
+//		simulationCases.add(new SimulatorGroup3Case11(rates));
+//		simulationCases.add(new SimulatorGroup3Case12(rates));
+//		simulationCases.add(new SimulatorGroup3Case13(rates));
+//		simulationCases.add(new SimulatorGroup3Case14(rates));
+//		simulationCases.add(new SimulatorGroup3Case15(rates));
+//		simulationCases.add(new SimulatorGroup3Case16(rates));
+//		simulationCases.add(new SimulatorGroup3Case17(rates));
+//		simulationCases.add(new SimulatorGroup3Case18(rates));
+//		simulationCases.add(new SimulatorGroup3Case19(rates));
+//		simulationCases.add(new SimulatorGroup3Case20(rates));
 		
 		return simulationCases;
 	}

@@ -53,7 +53,7 @@ public class SimulatorGroup1Case20 extends BaseSimulationCase {
 	}
 	
 	private void setOnCaseValues(EquipmentState state) throws Exception {
-		new WaterHeater(state, new WaterHeaterParameters(WaterHeaterType.ELECTRIC, 10, 20, 33000, 48, 126, 0f), getRates());
+		new WaterHeater(state, new WaterHeaterParameters(WaterHeaterType.ELECTRIC, 10, 20, 33000, 48, 126, 0.1f), getRates());
 		new TubeFluorescentLighting(28, new LightingParameter(1, new MorningNightTimeOfUse(new double[] {3,20}, new double[] {5,5})), getRates());
 		Thermostat thermostat = new Thermostat(17.7,  new double[] {6,10,14,17});
 		new Stove(state, new AllDayPeriodsTimeOfUse(new double[] {5,13,19}, new double[] {2.16,2.71,2.05}), StoveBurnerSize.SIX, new double[] {11,40,54,57});
@@ -75,7 +75,6 @@ public class SimulatorGroup1Case20 extends BaseSimulationCase {
 	private void setOffCaseValues(EquipmentState state) throws Exception {		
 		createOffWind();
 		createOffPhotovoltaic();
-		createOffFurnace();
 		createOffBattery();
 	}
 }

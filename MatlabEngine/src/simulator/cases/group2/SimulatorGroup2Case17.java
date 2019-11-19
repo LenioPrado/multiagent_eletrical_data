@@ -66,7 +66,6 @@ public class SimulatorGroup2Case17 extends BaseSimulationCase {
 		createOffWaterHeater();
 		createOffPoolPump();
 		createOffPhotovoltaic();
-		createOffFurnace();
 		createOffDryer();
 		createOffBattery();
 	}

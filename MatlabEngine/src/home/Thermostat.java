@@ -15,11 +15,11 @@ public class Thermostat extends Equipment {
 		if (temperature <= 0)
 			throw new Exception("Temperature must be positive!!!");
 		
-		if (_hours == null || _hours.length != 4)
+		if (hours == null || hours.length != 4)
 			throw new Exception("Hours vector cannot be null and must have four elements!!!");
 		
+		setHours(hours);		
 		_thermostatState = EquipmentState.OFF;
-		_hours = hours;
 		_temperature = temperature;
 	}
 	public Thermostat(double[] temperatures, double[] hours) throws Exception {
@@ -27,12 +27,17 @@ public class Thermostat extends Equipment {
 		if (temperatures == null || temperatures.length != 4)
 			throw new Exception("Temperatures vector cannot be null and must have four elements!!!");
 
-		if (_hours == null || _hours.length != 4)
+		setHours(hours);		
+		_thermostatState = EquipmentState.ON;		
+		_temperatures = temperatures;
+	}
+	
+	private void setHours(double[] hours) throws Exception {
+		
+		if (hours == null || hours.length != 4)
 			throw new Exception("Hours vector cannot be null and must have four elements!!!");
 		
-		_thermostatState = EquipmentState.ON;
 		_hours = hours;
-		_temperatures = temperatures;
 	}
 	
 	@Override

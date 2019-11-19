@@ -75,7 +75,6 @@ public class SimulatorGroup1Case10 extends BaseSimulationCase {
 	private void setOffCaseValues(EquipmentState state) throws Exception {		
 		createOffWind();
 		createOffPhotovoltaic();
-		createOffFurnace();
 		createOffBattery();
 	}
 }
